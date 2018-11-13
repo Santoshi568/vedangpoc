@@ -1,0 +1,268 @@
+
+
+1)What is Java String Pool?
+
+When we use double quotes to create a String, it first looks for String with same value in the String pool,
+if found it just returns the reference else it creates a new String in the pool and then returns the reference.
+String pool helps in saving a lot of space for Java Runtime although it takes more time to create the String.
+public class StringPool {
+    public static void main(String[] args) {
+        String s1 = "Cat";
+        String s2 = "Cat";
+        String s3 = new String("Cat");
+        
+        System.out.println("s1 == s2 :"+(s1==s2));
+        System.out.println("s1 == s3 :"+(s1==s3));
+        System.out.println("s1 == s3 :"+(s1.equals(s3)));
+    }
+
+}
+Output of the above program is:
+
+s1 == s2 :true
+s1 == s3 :false
+
+For example, how many string is getting created in below statement;
+
+ 
+
+String str = new String("Cat");
+ 
+In above statement, either 1 or 2 string will be created. If there is already a string literal “Cat” in the pool, then only one string “str” will be created in the pool.
+
+If there is no string literal “Cat” in the pool, then it will be first created in the pool and then in the heap space, so total 2 string objects will be created.
+
+
+?
+
+2) What are all the Classes and Interfaces that are 
+available in the collections?
+ 
+a) Given below are the Classes and Interfaces that are available in Collections:
+
+Interfaces:
+
+Collection
+List
+Set
+Map
+Sorted Set
+Sorted Map
+Queue
+Classes:
+
+Lists:
+Array List
+Vector
+Linked List
+Sets:
+
+Hash set
+Linked Hash Set
+Tree Set
+Maps:
+
+Hash Map
+Hash Table
+Tree Map
+Linked Hashed Map
+Queue:
+
+Priority Queue
+Collections are used to perform the following operations:
+
+Searching
+Sorting
+Manipulation
+Insertion
+Deletion
+3) Explain about the different lists available in the collection.
+
+a) Values added to the list is based on the index position and it is ordered by index position. Duplicates are allowed.
+
+Types of Lists are:
+
+Array List:
+
+Fast iteration and fast Random Access.
+It is an ordered collection (by index) and not sorted.
+It implements Random Access Interface.
+Example:
+
+public class Fruits{
+public static void main (String [ ] args){
+ArrayList <String>names=new ArrayList <String>();
+names.add (“apple”);
+names.add (“cherry”);
+names.add (“kiwi”);
+names.add (“banana”);
+names.add (“cherry”);
+System.out.println (names);
+}
+}
+Output:
+
+[Apple, cherry, kiwi, banana, cherry]
+
+From the output, Array List maintains the insertion order and it accepts the duplicates. But not sorted.
+
+Vector:
+
+It is same as Array List.
+
+Vector methods are synchronized.
+Thread safety.
+It also implements the Random Access.
+Thread safety usually causes a performance hit.
+Example:
+
+public class Fruit {
+public static void main (String [ ] args){
+Vector <String> names = new Vector <String> ( );
+ names.add (“cherry”);
+names.add (“apple”);
+names.add (“banana”);
+names.add (“kiwi”);
+names.add (“apple”);
+System.out.println (“names”);
+}
+}
+Output:
+
+[cherry,apple,banana,kiwi,apple]
+
+Vector also maintains the insertion order and accepts the duplicates.
+
+Linked List:
+
+Elements are doubly linked to one another.
+Performance is slow than Array list.
+Good choice for insertion and deletion.
+In Java 5.0 it supports common queue methods peek( ), Pool ( ), Offer ( ) etc.
+Example:
+
+public class Fruit {
+public static void main (String [ ] args){
+Linkedlist <String> names = new linkedlist <String> ( ) ;
+names.add(“banana”);
+names.add(“cherry”);
+names.add(“apple”);
+names.add(“kiwi”);
+names.add(“banana”);
+System.out.println (names);
+}
+}
+Output
+
+[ banana,cherry,apple,kiwi,banana]
+
+Maintains the insertion order and accepts the duplicates.
+
+
+
+4) Write a program which accepts a string like "This is nice" and converts
+
+it to a string like "This1 is2 nice3".
+
+
+
+a) public class Pra {
+
+public static void main(String[] args) {
+
+
+int count = 1;
+String s = "This is nice";
+
+String a[] = s.split(" ");
+
+for(String m : a){
+System.out.println(m + count++ + " ");
+}
+}
+
+}
+
+
+5)
+Example 1: Program to Check Prime Number using a for loop
+public class Prime {
+
+    public static void main(String[] args) {
+
+        int num = 29;
+        boolean flag = false;
+        for(int i = 2; i <= num/2; ++i)
+        {
+            // condition for nonprime number
+            if(num % i == 0)
+            {
+                flag = true;
+                break;
+            }
+        }
+
+        if (!flag)
+            System.out.println(num + " is a prime number.");
+        else
+            System.out.println(num + " is not a prime number.");
+    }
+}
+
+
+
+Example 2: Program to Check Prime Number using a while loop
+public class Prime {
+
+    public static void main(String[] args) {
+
+        int num = 33, i = 2;
+        boolean flag = true;
+        while(i <= num/2)
+        {
+            // condition for nonprime number
+            if(num % i == 0)
+            {
+                flag = false;
+                break;
+            }
+
+            ++i;
+        }
+
+        if (flag)
+            System.out.println(num + " is a prime number.");
+        else
+            System.out.println(num + " is not a prime number.");
+    }
+}
+
+6)
+Palindrome program in Java
+import java.util.*;
+
+class Palindrome
+{
+   public static void main(String args[])
+   {
+      String original, reverse = ""; // Objects of String class
+      Scanner in = new Scanner(System.in);
+     
+      System.out.println("Enter a string to check if it is a palindrome");
+      original = in.nextLine();
+     
+      int length = original.length();
+     
+      for (int i = length - 1; i >= 0; i--)
+         reverse = reverse + original.charAt(i);
+         
+      if (original.equals(reverse))
+         System.out.println("The string is a palindrome.");
+      else
+         System.out.println("The string isn't a palindrome.");
+         
+   }
+}    
+
+
+?

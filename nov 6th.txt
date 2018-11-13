@@ -1,0 +1,216 @@
+1) Difference between final, finally and finalize?
+
+
+No.	final	finally	finalize
+1)	Final is used to apply restrictions on class, method and variable. Final class can't be inherited, final method can't be overridden and final variable value can't be changed.	Finally is used to place important code, it will be executed whether exception is handled or not.	Finalize is used to perform clean up processing just before object is garbage collected.
+2)	Final is a keyword.	Finally is a block.	Finalize is a method.
+3)Final
+
+class FinalExample{  
+public static void main(String[] args){  
+final int x=100;  
+x=200;//Compile Time Error  
+}}  
+
+
+3)Finally
+
+class FinallyExample{  
+public static void main(String[] args){  
+try{  
+int x=300;  
+}catch(Exception e){System.out.println(e);}  
+finally{System.out.println("finally block is executed");}  
+}} 
+
+
+3) finalize
+class FinalizeExample{  
+public void finalize(){System.out.println("finalize called");}  
+public static void main(String[] args){  
+FinalizeExample f1=new FinalizeExample();  
+FinalizeExample f2=new FinalizeExample();  
+f1=null;  
+f2=null;  
+System.gc();  
+}}  
+
+
+System.gc() method runs the garbage collector.at that time finalize() is called by the garbage collector on an object when garbage collection determines that there are no more references to the object.
+
+
+2)what will be the output of this program?
+
+class FinalizeExample{ 
+static int m1(int i) {
+return m2(i*=11);
+}
+static int m2(int i) {
+return m3(i/=11);
+}
+static int m3(int i) { 
+return m4(i-=11);
+}
+static int m4(int i) { 
+return i+=11;
+}
+public static void main(String [] args) {
+System.out.println(m1(11));
+}
+}
+
+A static method can NOT access a Non-static method or variable.
+
+
+3)Explain about Exception Propagation.
+
+Ans: Exception is first thrown from the method which is at the top of the stack. If it doesn’t catch, then it pops up the method and moves to the previous method and so on until they are got.
+
+This is called Exception propagation.
+
+Example:
+
+
+
+public class Manipulation{
+
+
+public static void main(String[] args){
+
+
+add();
+
+
+}
+
+
+public void add(){
+
+
+addition();
+
+
+}
+From the above example, the stack looks like as shown below:
+
+Stack Example           
+
+If an exception occurred in the addition() method is not caught, then it moves to the method add(). Then it is moved to the main() method and then it will stop the flow of execution. It is called Exception Propagation.
+
+
+
+
+
+ Stack memory is always referenced in LIFO (Last-In-First-Out) order.
+
+
+4) Explain thread life cycle in Java.
+
+
+
+
+Ans: Thread has the following states: 
+
+New
+Runnable
+Running
+Non-runnable (Blocked)
+Terminated
+Thread Life Cycle in JAVA
+
+New:
+In New state, Thread instance has been created but start () method is not yet invoked. Now the thread is not considered alive.
+
+Runnable:
+The Thread is in runnable state after invocation of the start () method, but before the run () method is invoked. But a thread can also return to the runnable state from waiting/sleeping. In this state the thread is considered alive.
+
+Running:
+The thread is in running state after it calls the run () method. Now the thread begins the execution.
+
+Non-Runnable(Blocked):
+The thread is alive but it is not eligible to run. It is not in runnable state but also, it will return to runnable state after some time.
+
+Example: wait, sleep, block.
+
+Terminated :
+Once the run method is completed then it is terminated. Now the thread is not alive.
+
+
+
+
+
+
+
+5.Write a program to reverse a string.Donot use StringBuffer/StringBuilder inbuilt reverse function
+
+import java.util.*;
+
+ 
+
+class ReverseString
+
+{
+
+   public static void main(String args[])
+
+   {
+
+      String original, reverse = "";
+
+      Scanner in = new Scanner(System.in);
+
+     
+
+      System.out.println("Enter a string to reverse");
+
+      original = in.nextLine();
+
+     
+
+      int length = original.length();
+
+     
+
+      for (int i = length - 1 ; i >= 0 ; i--)
+
+         reverse = reverse + original.charAt(i);
+
+         
+
+      System.out.println("Reverse of the string: " + reverse);
+
+   }
+
+}
+string buffer
+class InvertString
+
+{
+
+   public static void main(String args[])
+
+   {
+
+      StringBuffer a = new StringBuffer("Java programming is fun");
+
+      System.out.println(a.reverse());
+
+   }
+
+}
+
+
+
+6)Write a program to find the largest number in a given array.
+int a[]={4,5,6,8,9,11};
+int max=a[o];
+for (i=0;i<a.length;i++){
+if (max<a[i])
+{
+max=a[i];
+}
+}
+system.out.println("max :"+max);
+}
+
+

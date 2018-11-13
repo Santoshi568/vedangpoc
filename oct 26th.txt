@@ -1,0 +1,127 @@
+1)What are the core concepts of OOPS?
+OOPS core concepts are;
+
+
+Abstraction
+Encapsulation
+Polymorphism
+Inheritance
+Composition
+Association
+Aggregation
+2)Difference between StringBuffer and StringBuilder ?
+a) Java provides three classes to represent a sequence of characters: String, StringBuffer, and StringBuilder. The String class is an immutable class whereas StringBuffer and StringBuilder classes are mutable. There are many differences between StringBuffer and StringBuilder. The StringBuilder class is introduced since JDK 1.5.
+
+A list of differences between StringBuffer and StringBuilder are given below:
+
+No.	StringBuffer	StringBuilder
+1)	StringBuffer is synchronized i.e. thread safe. It means two threads can't call the methods of StringBuffer simultaneously.	StringBuilder is non-synchronized i.e. not thread safe. It means two threads can call the methods of StringBuilder simultaneously.
+2)	StringBuffer is less efficient than StringBuilder.	StringBuilder is more efficient than StringBuffer.
+
+Performance Test of StringBuffer and StringBuilder
+Let's see the code to check the performance of StringBuffer and StringBuilder classes.
+
+
+//Java Program to demonstrate the performance of StringBuffer and StringBuilder classes.  
+
+    public class ConcatTest{  
+    public static void main(String[] args){  
+        long startTime = System.currentTimeMillis();  
+        StringBuffer sb = new StringBuffer("Java");  
+        for (int i=0; i<10000; i++){  
+            sb.append("Tpoint");  
+        }  
+        System.out.println("Time taken by StringBuffer: " + (System.currentTimeMillis() - startTime) + "ms");  
+        startTime = System.currentTimeMillis();  
+        StringBuilder sb2 = new StringBuilder("Java");  
+        for (int i=0; i<10000; i++){  
+            sb2.append("Tpoint");  
+        }  
+        System.out.println("Time taken by StringBuilder: " + (System.currentTimeMillis() - startTime) + "ms");  
+    }  
+}  
+3)Java Program to Display Fibonacci Series
+
+ 
+using for loop
+
+public class Fibonacci { public static void main(String[] args) {
+int n = 10, t1 = 0, t2 = 1;
+System.out.print("First " + n + " terms: ");
+for (int i = 1; i <= n; ++i) {
+System.out.print(t1 + " + ");
+int sum = t1 + t2;
+t1 = t2;
+t2 = sum;
+}
+}
+}
+
+
+using while loop
+public class Fibonacci {
+
+    public static void main(String[] args) {
+
+        int i = 1, n = 10, t1 = 0, t2 = 1;
+        System.out.print("First " + n + " terms: ");
+
+        while (i <= n)
+        {
+            System.out.print(t1 + " + ");
+
+            int sum = t1 + t2;
+            t1 = t2;
+            t2 = sum;
+
+            i++;
+        }
+    }
+}
+
+Display Fibonacci series upto a given number 
+
+?public class Fibonacci {
+
+    public static void main(String[] args) {
+
+        int n = 100, t1 = 0, t2 = 1;
+        
+        System.out.print("Upto " + n + ": ");
+        while (t1 <= n)
+        {
+            System.out.print(t1 + " + ");
+
+            int sum = t1 + t2;
+            t1 = t2;
+            t2 = sum;
+        }
+    }
+}
+?
+
+Write a program print "fizz" if a number is divisible by 3,"buzz" if a number is divisible by 5, and "fizz buzz" if number is divisible by both, else print the number.
+
+
+
+package test.com.help;
+
+public class Fizz {
+public static void main(String [] args) {
+int n=20;
+for(int i=1;i<=n;i++)
+{
+if(i%5==0)
+System.out.print("buzz"+" ");
+else if (i%3==0)
+System.out.print("fuzz"+" ");
+
+else
+System.out.print(i+" ");
+}
+
+
+} }
+
+1,2,fuzz,4,buzz,
+

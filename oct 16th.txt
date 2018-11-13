@@ -1,0 +1,138 @@
+1)Question 3. What is Class Loader Subsystem of JVM? What is its functioning and purpose?
+Answer.  It is important jvm interview question for experienced developers.
+
+Classloader is a subsystem of JVM.
+Classloader is used to load class files.
+Classloader verifies the class file using byte code verifier. Class file will only be loaded if it is valid.
+
+
+
+
+
+2)Question 6. What are most important/key HotSpot JVM components related to performance?
+Answer.  It is very important jvm interview question for experienced (5 years+) developers and software architects.
+
+Most important/key HotSpot JVM components related to performance are >
+Heap, 
+JIT (Just In Time) Compiler and 
+Garbage collector
+
+ Diagram : key components of HotSpot JVM (Java Virtual Machine) for performance.
+
+Three components Heap, JIT (Just In Time) Compiler and Garbage collector are related to JVM’s performance tuning. 
+
+Heap and Garbage collector for tuning JVM’s performance >
+All the objects are stored in heap. Garbage collector manages the heap at JVM initialization. 
+There are many VM (JVM) options for 
+Increasing and decreasing the heap size for managing object for best performance.
+selecting the different garbage collector depending on your requirement. 
+JIT (Just In Time) Compiler for tuning JVM’s performance >
+JIT compiler compiles bytecodes to machine code at run time and improves the performance of Java applications.
+In newer versions of JVM tuning of JIT (Just In Time) Compiler is rarely needed. 
+
+
+The most important/key HotSpot JVM  components related to performance are (IN SHORT) >
+Heap, 
+JIT (Just In Time) Compiler and 
+Garbage collector
+Heap and Garbage collector for tuning JVM’s performance > All the objects are stored in heap. Garbage collector manages the heap at JVM initialization. 
+JIT (Just In Time) Compiler for tuning JVM’s performance > JIT compiler compiles bytecodes to machine code at run time and improves the performance of Java applications.
+
+
+3)Overriding vs. Overloading in Java
+Overriding and Overloading are two very important concepts in Java. They are confusing for Java novice programmers. This post illustrates their differences by using two simple examples.
+
+
+ overloading-vs-overriding
+
+*Overloading occurs when two or more methods in one class have the same method name but different parameters.
+
+* Overriding means having two methods with the same method name and parameters (i.e., method signature). One of the methods is in the parent class and the other is in the child class. Overriding allows a child class to provide a specific implementation of a method that is already provided its parent class.
+
+
+4)Printing Floyd’s triangle pattern
+Floyd’s triangle is a right-angled triangular array of natural numbers.
+It is named after Robert Floyd.
+It is defined by filling the rows of the triangle with consecutive numbers, starting with a 1 in the top left corner.
+
+
+1
+2 3
+4 5 6
+7 8 9 10
+11 12 13 14 15
+
+package com.topjavatutorial;
+ 
+public class FloydTriangle {
+ 
+    public static void main(String[] args) {
+        int i, j, k = 1;
+        for (i = 1; i <= 5; i++) {
+            for (j = 1; j < i + 1; j++) {
+                System.out.print(k++ + " ");
+            }
+ 
+            System.out.println();
+        }
+    }
+ 
+}
+
+
+
+
+
+5) What are the Rules for defining a constructor?
+Constructor name should be the same as the class name
+It cannot contain any return type
+It can have all Access Modifiers are allowed (private , public, protected, default)
+It Cannot have any Non Access Modifiers (final ,static, abstract, synchronized)
+No return statement is allowed
+It can take any number of parameters
+Constructor can throw exception, we can have throws clause
+
+6)Predict the output of following Java Program   
+
+
+class Test { 
+    public static void main(String args[])  { 
+       int x = -4; 
+       System.out.println(x>>1);   0100 1100 0011 0010 
+       int y = 4; 
+       System.out.println(y>>1);   
+    }    
+} 1100
+0011
+0010
+0001
+1110
+
+
+
+
+7).Java Interview program on pre increment operator in expression.
+
+package com.instanceofjava;
+ 
+class IncrementDemo{
+ 
+public static void main(String [] args){ 
+
+    int a=20;
+    a= ++a + ++a;
+ 
+    System.out.println(a);
+ 
+}
+}
+
+
+
+
+6. Differentiate between JDK, JRE and JVM.
+JVM stands for Java Virtual Machine which provides runtime environment for Java Byte Codes to be executed.
+JRE (Java Runtime Environment) that includes sets of files required by JVM during runtime.
+JDK (Java Development Kit) consists of JRE along with the development tools required to write and execute a program.
+
+
